@@ -1,10 +1,4 @@
-[![Circle CI](https://circleci.com/gh/sameersbn/docker-mongodb.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-mongodb) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/mongodb/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/mongodb)
-
-> **NOTICE**:
->
-> Active maintenance of the image has been halted. Your [contributions](#contributing) are welcome.
-
-# sameersbn/mongodb:latest
+# anthonyrawlinsuom/lfmc-mongodb:latest
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -31,7 +25,7 @@ If you find this image useful here's how you can help:
 
 - Send a pull request with your awesome features and bug fixes
 - Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
-- Support the development of this image with a [donation](http://www.damagehead.com/donate/)
+- Support the development of this image.
 
 ## Issues
 
@@ -49,18 +43,16 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/sameersbn/mongodb) and is the recommended method of installation.
-
-> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/sameersbn/mongodb)
+Automated builds of the image are available on [Dockerhub](https://cloud.docker.com/swarm/anthonyrawlinsuom/lfmc-mongodb) and is the recommended method of installation.
 
 ```bash
-docker pull sameersbn/mongodb:latest
+docker pull anthonyrawlinsuom/lfmc-mongodb:latest
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t sameersbn/mongodb github.com/sameersbn/docker-mongodb
+docker build -t anthonyrawlinsuom/lfmc-mongodb github.com/anthonyrawlinsuom/lfmc-docker-mongodb
 ```
 
 ## Quickstart
@@ -71,7 +63,7 @@ Start MongoDB using:
 docker run --name mongodb -d --restart=always \
   --publish 27017:27017 \
   --volume /srv/docker/mongodb:/var/lib/mongodb \
-  sameersbn/mongodb:latest
+  anthonyrawlinsuom/lfmc-mongodb:latest
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -84,7 +76,7 @@ You can customize the launch command of the MongoDB server by specifying argumen
 docker run --name mongodb -it --rm \
   --publish 27017:27017 \
   --volume /srv/docker/mongodb:/var/lib/mongodb \
-  sameersbn/mongodb:latest --help
+  anthonyrawlinsuom/lfmc-mongodb:latest --help
 ```
 
 ## Persistence
@@ -115,7 +107,7 @@ Also the container processes seem to be executed as this host's user/group. The 
 ```bash
 docker run --name mongodb -it --rm [options] \
     --env "USERMAP_UID=$(id -u mongodb)" --env "USERMAP_GID=$(id -g mongodb)" \
-    sameersbn/mongodb:latest
+    anthonyrawlinsuom/lfmc-mongodb:latest
 ```
 
 
@@ -128,7 +120,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull sameersbn/mongodb:latest
+  docker pull anthonyrawlinsuom/lfmc-mongodb:latest
   ```
 
   2. Stop the currently running image:
@@ -148,7 +140,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name mongodb -d \
     [OPTIONS] \
-    sameersbn/mongodb:latest
+    anthonyrawlinsuom/lfmc-mongodb:latest
   ```
 
 ## Shell Access

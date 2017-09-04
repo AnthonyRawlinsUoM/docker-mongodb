@@ -1,5 +1,6 @@
-FROM sameersbn/ubuntu:14.04.20151213
-MAINTAINER sameer@damagehead.com
+FROM library/ubuntu
+# FORMER MAINTAINER sameer@damagehead.com
+MAINTAINER Anthony Rawlins <anthony.rawlins@unimelb.edu.au>
 
 ENV MONGO_USER=mongodb \
     MONGO_DATA_DIR=/var/lib/mongodb \
