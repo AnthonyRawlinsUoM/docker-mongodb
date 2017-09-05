@@ -26,8 +26,8 @@ create_log_dir() {
 }
 
 map_uidgid
-create_data_dir
-create_log_dir
+#create_data_dir
+#create_log_dir
 
 # allow arguments to be passed to mongod
 if [[ ${1:0:1} = '-' ]]; then
